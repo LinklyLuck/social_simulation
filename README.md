@@ -98,7 +98,7 @@ d(parent(m))+1 & \text{otherwise}
 ### Installation
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/socialsimbench.git
+git clone https://github.com/LinkLuck/socialsimbench.git
 cd socialsimbench
 
 # Install dependencies
