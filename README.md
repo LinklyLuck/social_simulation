@@ -1,10 +1,10 @@
-# 🌐 SocialSimBench
+# 🌐 SocialSimBench V3
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.28+-FF4B4B.svg)](https://streamlit.io)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-**An Interactive LLM-Powered Multi-Agent Social Media Simulation + Benchmark Builder (ACL 2026 Demo Track)**
+**An Interactive LLM-Powered Multi-Agent Social Media Simulation + Benchmark Builder**
 
 SocialSimBench is a platform for simulating social media dynamics using **LLM-powered agents**. It supports multiple platform modes (Twitter, Reddit, Weibo), multiple network topologies, and a **benchmark task pool** for studying information diffusion, misinformation/rumor correction, stance evolution, collaboration, and polarization. It also supports **dataset-grounded runs** via **Kaggle import** and local file upload, and exports **reproducible episode artifacts** (config + logs + metrics + plots).
 
@@ -61,37 +61,49 @@ SocialSimBench is a platform for simulating social media dynamics using **LLM-po
 
 ## 📌 Core Formulas (Metrics + Dynamics)
 
-> Note: GitHub may not render LaTeX on all pages by default; the equations are included for clarity.
+> GitHub renders math in Markdown using `$...$` (inline) and `$$...$$` (display).  
+> If your viewer does not render math, you can still read the plain-text equivalents below.
 
-**Share probability** (message from agent \(i\) to neighbor \(j\)):
+**Share probability** (message from agent $i$ to neighbor $j$):
 
-\[
+$$
 P_j(\text{share}\mid i\to j)=\mathrm{clip}_{[0,1]}\Big(p_{base}\cdot\beta_{platform}\cdot(\alpha\cdot\tau_{j,i}+(1-\alpha)\cdot\tau_0)\Big)
-\]
+$$
 
-where \(\tau_{j,i}\) is receiver-to-sender trust, and \(\tau_0=0.5\) is a baseline noise term.
+where $\tau_{j,i}$ is receiver-to-sender trust, and $\tau_0=0.5$ is a baseline noise term.
 
 **Coverage**
-\[
+
+$$
 \text{Coverage}=\frac{|I|}{|N|}
-\]
-where \(I\) is the set of agents that have received the target message at least once.
+$$
+
+where $I$ is the set of agents that have received the target message at least once.
 
 **Cascade depth**
-\[
+
+$$
 d(m)=
 \begin{cases}
 0 & \text{if } parent(m)=\varnothing \\
 d(parent(m))+1 & \text{otherwise}
 \end{cases}
-\]
+$$
 
-**Polarization (size-weighted between-group variance)** (stance normalized to \([-1,1]\)):
-\[
+**Polarization (size-weighted between-group variance)** (stance normalized to $[-1,1]$)
+
+$$
 \text{Polarization}=\sqrt{\sum_{c\in C}\frac{n_c}{N}\,(\bar{s}_c-\bar{s})^2}
-\]
+$$
+
+**Plain-text equivalents (for maximum compatibility)**
+- Share: `P_share = clip_[0,1]( p_base * beta_platform * (alpha * tau[j,i] + (1-alpha) * tau0) )`
+- Coverage: `|I| / |N|`
+- Depth: `d(m)=0 if no parent else d(parent)+1`
+- Polarization: `sqrt( sum_c (n_c/N) * (sbar_c - sbar)^2 )`
 
 ---
+
 
 ## 🚀 Quick Start
 
@@ -197,8 +209,7 @@ socialsimbench/
 │   │   └── visualizer.py         # Charts + cascade graphs
 │   └── evaluation/
 │       └── metrics.py            # Metrics (coverage/depth/polarization)
-└── docs/
-    └── images/                   # Demo assets
+
 ```
 
 ---
@@ -279,7 +290,7 @@ class MyLLMClient(LLMClient):
 ## 📝 Citation
 ```bibtex
 @misc{socialsimbench2026demo,
-  title={SocialSimBench: An Interactive LLM-Powered Multi-Agent Social Media Simulation + Benchmark Builder},
+  title={SocialSimBench V3: An Interactive LLM-Powered Multi-Agent Social Media Simulation + Benchmark Builder},
   author={Anonymous},
   year={2026},
   note={ACL 2026 System Demonstrations submission}
@@ -293,6 +304,12 @@ class MyLLMClient(LLMClient):
 - Simulation outcomes are not predictions of real-world behavior.
 - Respect dataset licenses (especially for Kaggle-imported content).
 
+---
+
+## 📄 License
+MIT License.
+
+---
 
 <p align="center">
   Thanks for Using Social Simulation Research
