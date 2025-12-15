@@ -294,8 +294,6 @@ class MyLLMClient(LLMClient):
 - Respect dataset licenses (especially for Kaggle-imported content).
 
 
----
-
 <p align="center">
   Thanks for Using Social Simulation Research
 </p>
