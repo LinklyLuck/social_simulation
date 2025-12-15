@@ -293,13 +293,9 @@ class MyLLMClient(LLMClient):
 - Simulation outcomes are not predictions of real-world behavior.
 - Respect dataset licenses (especially for Kaggle-imported content).
 
----
-
-## 📄 License
-MIT License.
 
 ---
 
 <p align="center">
-  Made with ❤️ for Social Simulation Research
+  Thanks for Using Social Simulation Research
 </p>
