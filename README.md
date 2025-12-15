@@ -1,4 +1,4 @@
-# 🌐 SocialSimBench V3
+# 🌐 SocialSimBench
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.28+-FF4B4B.svg)](https://streamlit.io)
@@ -279,7 +279,7 @@ class MyLLMClient(LLMClient):
 ## 📝 Citation
 ```bibtex
 @misc{socialsimbench2026demo,
-  title={SocialSimBench V3: An Interactive LLM-Powered Multi-Agent Social Media Simulation + Benchmark Builder},
+  title={SocialSimBench: An Interactive LLM-Powered Multi-Agent Social Media Simulation + Benchmark Builder},
   author={Anonymous},
   year={2026},
   note={ACL 2026 System Demonstrations submission}
