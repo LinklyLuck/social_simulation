@@ -110,7 +110,7 @@ $$
 ### Installation
 ```bash
 # Clone the repository
-git clone https://github.com/LinkLuck/socialsimbench.git
+git clone https://github.com/LinkLuck/social_simulation.git
 cd socialsimbench
 
 # Install dependencies
